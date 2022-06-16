@@ -1,5 +1,7 @@
 import java.awt.Color;
 
+//This enum acts as a constructor for all the available shapes in Tetris
+// The coordinates give each one a unique shape and the Java.awt.Color allows us to display them in different colors
 enum Tetromino {
     NullShape(new int[][] { { 0, 0 }, { 0, 0 }, { 0, 0 }, { 0, 0 } }, new Color(0, 0, 0)),
     ZShape(new int[][] { { 0, -1 }, { 0, 0 }, { -1, 0 }, { -1, 1 } }, new Color(204, 102, 102)),
