@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 public class TetrisMain extends JFrame {
 	private JLabel statusBar;
 	
+	//Constructor method that initializes the UI
 	public TetrisMain() {
 		
 		statusBar = new JLabel (" 0");
@@ -19,11 +20,13 @@ public class TetrisMain extends JFrame {
 		setTitle("Tetris Clone");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
-
+        
+	//creates a status bar to display game score and game state(paused or game over)
 	JLabel getStatusBar() {
 		return statusBar;
 	}
 	
+	//Calling main to start the game
 	public static void main(String[] args) {
 		
 		TetrisMain myTetris = new TetrisMain();
