@@ -10,14 +10,14 @@ public class Shape {
 		setShape(Tetromino.NullShape);
 	}
 	
-	//Method to define shape of a tetromino
+	//Method to define shape of a tetromino(To be used in the shape randomiser)
 	public void setShape(Tetromino shape) {
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 2; ++j) {
 				coords[i][j] = shape.coords[i][j];
 			}
 		}
-		tetrisPiece = shape;
+		tetrisPiece = shape; //Sets the tetris piece as the obtained shape
 	}
 	
 	//setters to act as variables to be used later on
@@ -43,7 +43,8 @@ public class Shape {
 	}
 	
 	//Obtaining random numbers which are then pushed into
-	//2 Dimensional Array
+	//2 Dimensional Array to create random shapes based on the
+	//Tetrominoes found in Tetromino 
     public void randomizeShape() {
 		Random r = new Random();
 		int x = Math.abs(r.nextInt()) % 7 + 1;
@@ -51,6 +52,7 @@ public class Shape {
 		setShape(values[x]);
 	  }
 	
+	//Methods to be obtain minimum values
 	public int minX() {
 		int m = coords[0][0];
 		
@@ -69,6 +71,8 @@ public class Shape {
 		return m;
 	}
 	
+	//Methods to rotate tetris pieces right and left respectively
+	//Shifts the coordinates of the Tetris piece and then returns the new coords
 	public Shape rotateRight() {
 		if (tetrisPiece == Tetromino.SquareShape) {
 			return this;
