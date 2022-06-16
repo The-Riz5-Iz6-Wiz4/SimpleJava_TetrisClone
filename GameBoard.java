@@ -100,7 +100,9 @@ public class GameBoard extends JPanel implements ActionListener {
         oneLineDown();
       }
     } 
-   
+    
+    //Every tetris piece is comprised of 4 squares
+    //This method draws each individual square of the tetris piece to make the full shape
     private void drawSquare(Graphics g, int x, int y, Tetromino shape) {
       Color color = shape.color;
       g.setColor(color);
@@ -112,7 +114,7 @@ public class GameBoard extends JPanel implements ActionListener {
       g.drawLine(x + 1, y + squareHeight() - 1, x + squareWidth() - 1, y + squareHeight() - 1);
       g.drawLine(x + squareWidth() - 1, y + squareHeight() - 1, x + squareWidth() - 1, y + 1);
     }
-   
+    //Overriding the paint method to better suit Tetris
     @Override
     public void paint(Graphics g) {
       super.paint(g);
@@ -128,7 +130,7 @@ public class GameBoard extends JPanel implements ActionListener {
           }
         }
       }
-   
+      //in tandem with the drawSqaure method, paints the Tetromino onto the top of the screen
       if (curPiece.getTetromino() != Tetromino.NullShape) {
         for (int i = 0; i < 4; ++i) {
           int x = curX + curPiece.x(i);
@@ -224,7 +226,7 @@ public class GameBoard extends JPanel implements ActionListener {
         }
       }
     }
-   
+   //Method to instantly drop the piece until it collides with a boundary or another tetris piece
     private void dropDown() {
       int newY = curY;
    
