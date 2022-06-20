@@ -91,7 +91,7 @@ public class GameBoard extends JPanel implements ActionListener {
         pieceDrop();
     }
    
-    @Override
+    @Override //This method forces pieces to fall down so as long as isFallingDone is false and calls to create a new piece when it's true
     public void actionPerformed(ActionEvent ae) {
       if (isFallingDone) {
         isFallingDone = false;
@@ -266,6 +266,10 @@ public class GameBoard extends JPanel implements ActionListener {
             tryMove(curPiece.rotateRight(), curX, curY);
             break;
           case KeyEvent.VK_UP: //rotates anti-clockwise
+            tryMove(curPiece.rotateLeft(), curX, curY);
+            break;
+          case 'W': //rotates the piece 180 degrees
+            tryMove(curPiece.rotateLeft(), curX, curY);
             tryMove(curPiece.rotateLeft(), curX, curY);
             break;
           case KeyEvent.VK_SPACE: //instantly drops the currently used tetromino
