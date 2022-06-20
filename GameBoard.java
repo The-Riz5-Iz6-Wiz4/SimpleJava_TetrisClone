@@ -11,7 +11,7 @@ import java.awt.Dimension;
 
 public class GameBoard extends JPanel implements ActionListener {
     //inializing several variables to be used later on
-    private static final int BOARD_WIDTH = 10
+    private static final int BOARD_WIDTH = 10;
     private static final int BOARD_HEIGHT = 22;
     private Timer timer;
     private boolean isFallingDone = false;
